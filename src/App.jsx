@@ -12,7 +12,8 @@ function TicTacToe() {
   const [msg, setMsg] = useState(` ${P}'s Move`);
   const [isActive, setIsActive] = useState(false);
   const [winningCells, setWinningCells] = useState([]);
-  const [backgroundImage, setBackgroundImage] = useState(`url('/bg.png')`);
+  const [backgroundImage, setBackgroundImage] = useState(`url("${process.env.PUBLIC_URL}/bg.png")`);
+
   const [sX, setsX] = useState(0);
   const [sO, setsO] = useState(0);
   function iswon(newBod) {
@@ -35,7 +36,7 @@ function TicTacToe() {
         newBod[c[0]][c[1]] === P
       ) {
         setWinningCells(combination); 
-        setBackgroundImage(`url('/wi.png')`);
+        setBackgroundImage(`url("${process.env.PUBLIC_URL}/wi.png")`);
 
         if (P === "X") {
           setsX(sX + 1); 
@@ -63,7 +64,7 @@ function TicTacToe() {
       if (iswon(newbod)) {
         setMsg(`${P} WON !`);
         setIsActive(true); 
-        setBackgroundImage(`url('/wi.png')`);
+        setBackgroundImage(`url("${process.env.PUBLIC_URL}/wi.png")`);
         return;
       } else if (isdraw()) {
         setMsg("Match Draw");
@@ -98,7 +99,7 @@ function TicTacToe() {
     }
     setWinningCells([]);
     setIsActive(false);
-    setBackgroundImage(`url('/bg.png')`);
+    setBackgroundImage(`url("${process.env.PUBLIC_URL}/bg.png")`);
   }
 
   return (
