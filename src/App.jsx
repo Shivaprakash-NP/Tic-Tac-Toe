@@ -95,7 +95,7 @@ function TicTacToe() {
     if(hello==0)
     {
       setP(P === "X" ? "O" : "X");
-      setMsg(`${P === "X" ? "O" : "X"}'s Move`);
+      setMsg(`${P === "X" ? "O" : "X"}'s Move!`);
     }
     setWinningCells([]);
     setIsActive(false);
